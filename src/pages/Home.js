@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { FaBrain, FaGamepad, FaGlobe, FaJs, FaPython, FaServer, FaStar } from "react-icons/fa";
 
@@ -127,6 +128,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

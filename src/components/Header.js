@@ -11,10 +11,11 @@ export default function Header() {
           <p className="text-lg font-black tracking-wide text-cyan-300">FutureBit</p>
         </div>
       </div>
+      </a>
       <div className="hidden lg:block">
         <p className="mt-1 text-xs text-slate-400">From Pixels to Algorithms</p>
       </div>
-      </a>
+      
     </header>
   );
 }

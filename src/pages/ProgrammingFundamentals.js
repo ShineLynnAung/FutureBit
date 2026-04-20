@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const parts = [
   {
@@ -455,6 +456,22 @@ function ContentRenderer({ content }) {
 
 export default function ProgrammingFundamentals() {
   const [activePart, setActivePart] = useState("part-1");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const contentRef = useRef(null);
+
+  const handlePartChange = (partId) => {
+    setActivePart(partId);
+    setSidebarOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNext = () => {
+    const currentIdx = parts.findIndex(p => p.id === activePart);
+    if (currentIdx < parts.length - 1) {
+      setActivePart(parts[currentIdx + 1].id);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const content = contents[activePart];
 
@@ -463,13 +480,21 @@ export default function ProgrammingFundamentals() {
       <Header />
 
       <div className="flex flex-col lg:flex-row">
-        <nav className="w-full lg:w-72 border-b lg:border-b-0 lg:border-r border-white/10 p-4 lg:p-6">
+        <button
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="lg:hidden w-full text-left px-4 py-3 bg-white/5 border-b border-white/10 flex items-center justify-between"
+        >
+          <span className="font-bold">Content</span>
+          <span>{sidebarOpen ? '▼' : '▶'}</span>
+        </button>
+
+        <nav className={`lg:w-72 lg:block border-b lg:border-b-0 lg:border-r border-white/10 p-4 lg:p-6 ${sidebarOpen ? 'block' : 'hidden'}`}>
           <h2 className="text-lg font-black mb-4 text-slate-400">Content</h2>
           <ul className="space-y-2">
             {parts.map((part) => (
               <li key={part.id}>
                 <button
-                  onClick={() => setActivePart(part.id)}
+                  onClick={() => handlePartChange(part.id)}
                   className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activePart === part.id
                     ? "bg-blue-600 font-bold"
                     : "hover:bg-white/5 text-slate-400"
@@ -494,7 +519,7 @@ export default function ProgrammingFundamentals() {
           </ul>
         </nav>
 
-        <main className="flex-1 p-4 lg:p-8">
+        <main className="flex-1 p-4 lg:p-8" ref={contentRef}>
           <article className="mx-auto max-w-3xl">
             <h1 className="text-2xl font-black mb-6">{content.title}</h1>
 
@@ -509,15 +534,9 @@ export default function ProgrammingFundamentals() {
 
             <div className="mt-10 flex justify-between">
               <div className="flex items-center gap-2 text-green-400 text-sm font-bold">
-                {/* <FaCheck /> Completed */}
               </div>
               <button
-                onClick={() => {
-                  const currentIdx = parts.findIndex(p => p.id === activePart);
-                  if (currentIdx < parts.length - 1) {
-                    setActivePart(parts[currentIdx + 1].id);
-                  }
-                }}
+                onClick={handleNext}
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition-colors"
               >
                 Next Part →
@@ -526,6 +545,7 @@ export default function ProgrammingFundamentals() {
           </article>
         </main>
       </div>
+      <Footer />
     </div>
   );
 }

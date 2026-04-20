@@ -2,13 +2,17 @@ import './App.css';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './pages/Home';
 import ProgrammingFundamentals from './pages/ProgrammingFundamentals';
+import Footer from './components/Footer';
 
 const ComingSoon = ({ title }) => (
-  <div className="min-h-screen bg-[#0b1020] text-white flex items-center justify-center">
-    <div className="text-center p-8">
-      <h1 className="text-3xl font-black mb-4">{title}</h1>
-      <p className="text-slate-400">Coming Soon!</p>
+  <div className="min-h-screen bg-[#0b1020] text-white flex flex-col">
+    <div className="flex-1 flex items-center justify-center">
+      <div className="text-center p-8">
+        <h1 className="text-3xl font-black mb-4">{title}</h1>
+        <p className="text-slate-400">Coming Soon!</p>
+      </div>
     </div>
+    <Footer />
   </div>
 );
 
