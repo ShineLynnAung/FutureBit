@@ -15,7 +15,7 @@ const parts = [
   {
     id: "part-3",
     title: "Part 3: Algorithm နဲ့ Logic",
-    items: ["Algorithm ဆိုတာဘာလဲ?", "Algorithm ရေးနည်း"]
+    items: ["Algorithm ဆိုတာဘာလဲ?", "Algorithm ရေးနည်း,Flowchart"]
   },
   {
     id: "part-4",
@@ -79,6 +79,7 @@ const contents = {
           { "type": "text", "value": "Computer က လူလို မစဉ်းစားတတ်ပါဘူး။ မင်းပေးတဲ့ အမိန့် (instruction) တွေကိုသာ လိုက်နာပြီး အလုပ်လုပ်ပါတယ်။ ဒါကြောင့် Coding နဲ့ Computer ကို ဘာလုပ်ရမလဲဆိုတာ တိတိကျကျ ပြောပြရပါတယ်။" },
           { "type": "text", "value": "Computer အလုပ်လုပ်ပုံကို အလွယ်တကူ နားလည်ဖို့ဆိုရင် Input → Process → Output ဆိုတဲ့ အဆင့် ၃ ဆင့်နဲ့ ကြည့်နိုင်ပါတယ်။" },
           { "type": "heading", "value": "Computer အလုပ်လုပ်ပုံ အဆင့်များ" },
+          // { "type": "image", "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop", "alt": "Computer အလုပ်လုပ်ပုံ", "caption": "Input → Process → Output" },
           {
             "type": "list", "value": [
               "📥 Input - User က data (ဥပမာ - စာရိုက်ခြင်း၊ ခလုတ်နှိပ်ခြင်း) ထည့်ပေးခြင်း",
@@ -134,190 +135,272 @@ const contents = {
     title: "Part 3: Algorithm နဲ့ Logic",
     sections: [
       {
-  "heading": "Algorithm ဆိုတာဘာလဲ?",
-  "content": [
-    { "type": "text", "value": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့အတွက် အဆင့်လိုက် စီစဉ်ထားတဲ့ လုပ်ဆောင်ချက်တွေ ဖြစ်ပါတယ်။ Computer ကို ဘာလုပ်ရမလဲဆိုတာ တိတိကျကျ အဆင့်လိုက် ပြောပြထားတဲ့ လမ်းညွှန်ချက်လည်း ဖြစ်ပါတယ်။" },
-    { "type": "text", "value": "Coding မရေးခင်မှာ အရင်ဆုံး Algorithm ကို စဉ်းစားထားရပါတယ်။ ဘာလုပ်မလဲ၊ ဘယ်လိုလုပ်မလဲ၊ ဘယ်အဆင့်နဲ့လုပ်မလဲ ဆိုတာကို အစီအစဉ်ချပြီးမှ Code ရေးတာဖြစ်ပါတယ်။" },
-    { "type": "heading", "value": "Algorithm ရဲ့ အရေးပါမှု" },
-    { "type": "list", "value": [
-      "🧠 ပြဿနာကို အလွယ်တကူ ဖြေရှင်းနိုင်စေတယ်",
-      "📋 အလုပ်လုပ်ပုံကို စနစ်တကျ စီစဉ်နိုင်စေတယ်",
-      "💻 Code ရေးတဲ့အခါ အမှားနည်းစေတယ်",
-      "⚡ Program ကို ပိုမိုမြန်ဆန်အောင် လုပ်ပေးနိုင်တယ်"
-    ]},
-    { "type": "heading", "value": "ဥပမာ - မုန့်လုပ်တဲ့ Algorithm" },
-    { "type": "list", "value": [
-      "1️⃣ မုန့်မှုန့်ထည့်",
-      "2️⃣ ရေထည့်",
-      "3️⃣ မွှေ",
-      "4️⃣ မီးဖိုထဲထည့်",
-      "5️⃣ အချိန်ပြည့်ပြီးရင် ထုတ်ယူ"
-    ]},
-    { "type": "text", "value": "ဒီလို အဆင့်လိုက် လုပ်ဆောင်ခြင်းက Algorithm ဖြစ်ပါတယ်။ Coding လောကမှာတော့ Algorithm က အခြေခံအရေးကြီးဆုံး အရာတစ်ခုဖြစ်ပါတယ်။" }
-  ]
-},
+        "heading": "Algorithm ဆိုတာဘာလဲ?",
+        "content": [
+          { "type": "text", "value": "Algorithm ဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့အတွက် အဆင့်လိုက် စီစဉ်ထားတဲ့ လုပ်ဆောင်ချက်တွေ ဖြစ်ပါတယ်။ Computer ကို ဘာလုပ်ရမလဲဆိုတာ တိတိကျကျ အဆင့်လိုက် ပြောပြထားတဲ့ လမ်းညွှန်ချက်လည်း ဖြစ်ပါတယ်။" },
+          { "type": "text", "value": "Coding မရေးခင်မှာ အရင်ဆုံး Algorithm ကို စဉ်းစားထားရပါတယ်။ ဘာလုပ်မလဲ၊ ဘယ်လိုလုပ်မလဲ၊ ဘယ်အဆင့်နဲ့လုပ်မလဲ ဆိုတာကို အစီအစဉ်ချပြီးမှ Code ရေးတာဖြစ်ပါတယ်။" },
+          { "type": "heading", "value": "Algorithm ရဲ့ အရေးပါမှု" },
+          {
+            "type": "list", "value": [
+              "🧠 ပြဿနာကို အလွယ်တကူ ဖြေရှင်းနိုင်စေတယ်",
+              "📋 အလုပ်လုပ်ပုံကို စနစ်တကျ စီစဉ်နိုင်စေတယ်",
+              "💻 Code ရေးတဲ့အခါ အမှားနည်းစေတယ်",
+              "⚡ Program ကို ပိုမိုမြန်ဆန်အောင် လုပ်ပေးနိုင်တယ်"
+            ]
+          },
+          { "type": "heading", "value": "ဥပမာ - မုန့်လုပ်တဲ့ Algorithm" },
+          { "type": "image", "src": "https://images.unsplash.com/photo-1507925921958-8a0a1a1a1a1a?w=800&h=400&fit=crop", "alt": "Algorithm ဥပမာ", "caption": "Algorithm အဆင့်လိုက် လုပ်ဆောင်ခြင်း" },
+          {
+            "type": "list", "value": [
+              "1️⃣ မုန့်မှုန့်ထည့်",
+              "2️⃣ ရေထည့်",
+              "3️⃣ မွှေ",
+              "4️⃣ မီးဖိုထဲထည့်",
+              "5️⃣ အချိန်ပြည့်ပြီးရင် ထုတ်ယူ"
+            ]
+          },
+          { "type": "text", "value": "ဒီလို အဆင့်လိုက် လုပ်ဆောင်ခြင်းက Algorithm ဖြစ်ပါတယ်။ Coding လောကမှာတော့ Algorithm က အခြေခံအရေးကြီးဆုံး အရာတစ်ခုဖြစ်ပါတယ်။" }
+        ]
+      },
       {
-  "heading": "Algorithm ရေးနည်း",
+        "heading": "Algorithm ရေးနည်း",
+        "content": [
+          { "type": "text", "value": "Algorithm ရေးနည်းဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့အတွက် လုပ်ဆောင်ရမယ့် အဆင့်တွေကို စနစ်တကျ ရေးသားခြင်းဖြစ်ပါတယ်။ Coding မရေးခင် အရင်ဆုံး Algorithm ကို ရေးသားထားရင် ပိုမိုရှင်းလင်းပြီး အမှားနည်းစေပါတယ်။" },
+          { "type": "text", "value": "Algorithm ကို ရေးတဲ့အခါမှာ ရိုးရိုးလေးနဲ့ တိတိကျကျ အဆင့်လိုက် စဉ်းစားပြီး ရေးရပါတယ်။ Computer နားလည်အောင်မဟုတ်ဘဲ လူနားလည်အောင် အစီအစဉ်ချရေးတာဖြစ်ပါတယ်။" },
+          { "type": "heading", "value": "Algorithm ရေးနည်း အဆင့်များ" },
+          {
+            "type": "list", "value": [
+              "💡 ပြဿနာကို သေချာနားလည်ခြင်း",
+              "🧠 ဖြေရှင်းမည့်နည်းလမ်းကို စဉ်းစားခြင်း",
+              "📋 အဆင့်လိုက် စာရင်းရေးခြင်း",
+              "🔍 အမှားရှိမရှိ စစ်ဆေးခြင်း",
+              "⚙️ လိုအပ်လျှင် ပြန်ပြင်ခြင်း"
+            ]
+          },
+          { "type": "heading", "value": "ဥပမာ - 2 + 3 တွက်ရန် Algorithm" },
+          {
+            "type": "list", "value": [
+              "1️⃣ ပထမ နံပါတ် (2) ကိုယူ",
+              "2️⃣ ဒုတိယ နံပါတ် (3) ကိုယူ",
+              "3️⃣ နှစ်ခုကို ပေါင်း",
+              "4️⃣ ရလဒ်ကို ပြန်ပြ"
+            ]
+          },
+          { "type": "text", "value": "Algorithm ကောင်းတစ်ခုရေးနိုင်ရင် Coding ရေးတဲ့အခါ ပိုမိုလွယ်ကူပြီး စနစ်တကျဖြစ်လာပါတယ်။ ဒါကြောင့် Programming လေ့လာရာမှာ Algorithm က အရမ်းအရေးကြီးပါတယ်။" }
+        ]
+      },
+      {
+  "heading": "Flowchart",
   "content": [
-    { "type": "text", "value": "Algorithm ရေးနည်းဆိုတာ ပြဿနာတစ်ခုကို ဖြေရှင်းဖို့အတွက် လုပ်ဆောင်ရမယ့် အဆင့်တွေကို စနစ်တကျ ရေးသားခြင်းဖြစ်ပါတယ်။ Coding မရေးခင် အရင်ဆုံး Algorithm ကို ရေးသားထားရင် ပိုမိုရှင်းလင်းပြီး အမှားနည်းစေပါတယ်။" },
-    { "type": "text", "value": "Algorithm ကို ရေးတဲ့အခါမှာ ရိုးရိုးလေးနဲ့ တိတိကျကျ အဆင့်လိုက် စဉ်းစားပြီး ရေးရပါတယ်။ Computer နားလည်အောင်မဟုတ်ဘဲ လူနားလည်အောင် အစီအစဉ်ချရေးတာဖြစ်ပါတယ်။" },
-    { "type": "heading", "value": "Algorithm ရေးနည်း အဆင့်များ" },
-    { "type": "list", "value": [
-      "💡 ပြဿနာကို သေချာနားလည်ခြင်း",
-      "🧠 ဖြေရှင်းမည့်နည်းလမ်းကို စဉ်းစားခြင်း",
-      "📋 အဆင့်လိုက် စာရင်းရေးခြင်း",
-      "🔍 အမှားရှိမရှိ စစ်ဆေးခြင်း",
-      "⚙️ လိုအပ်လျှင် ပြန်ပြင်ခြင်း"
-    ]},
-    { "type": "heading", "value": "ဥပမာ - 2 + 3 တွက်ရန် Algorithm" },
-    { "type": "list", "value": [
-      "1️⃣ ပထမ နံပါတ် (2) ကိုယူ",
-      "2️⃣ ဒုတိယ နံပါတ် (3) ကိုယူ",
-      "3️⃣ နှစ်ခုကို ပေါင်း",
-      "4️⃣ ရလဒ်ကို ပြန်ပြ"
-    ]},
-    { "type": "text", "value": "Algorithm ကောင်းတစ်ခုရေးနိုင်ရင် Coding ရေးတဲ့အခါ ပိုမိုလွယ်ကူပြီး စနစ်တကျဖြစ်လာပါတယ်။ ဒါကြောင့် Programming လေ့လာရာမှာ Algorithm က အရမ်းအရေးကြီးပါတယ်။" }
+    {
+      "type": "text",
+      "value": "Flowchart ဆိုတာ Algorithm (သို့) Program တစ်ခုရဲ့ လုပ်ဆောင်ပုံကို ပုံ (diagram) နဲ့ ဖော်ပြထားတာဖြစ်ပါတယ်။ အဆင့်လိုက် ဘာလုပ်မလဲဆိုတာကို သေချာနားလည်အောင် ပုံနဲ့ပြထားတာပါ။"
+    },
+    {
+      "type": "text",
+      "value": "Coding မရေးခင် Flowchart ဆွဲထားရင် အလုပ်လုပ်ပုံကို ရှင်းရှင်းလင်းလင်း နားလည်နိုင်ပြီး အမှားနည်းစေပါတယ်။"
+    },
+    {
+      "type": "heading",
+      "value": "Flowchart ရဲ့ အဓိက အစိတ်အပိုင်းများ"
+    },
+    {
+      "type": "list",
+      "value": [
+        "🔵 Start / End - Program စတင်ခြင်းနှင့် ပြီးဆုံးခြင်း",
+        "📥 Input - Data ထည့်သွင်းခြင်း",
+        "⚙️ Process - တွက်ချက်ခြင်း / လုပ်ဆောင်ခြင်း",
+        "📤 Output - ရလဒ်ထုတ်ပေးခြင်း",
+        "🔷 Decision - Yes / No ဆုံးဖြတ်ခြင်း"
+      ]
+    },
+    { type: "image", src: "https://cdn1.qualitygurus.com/wp-content/uploads/2021/12/Flowchart-symbols.jpg", alt: "description", caption: "caption text" },
+    {
+      "type": "heading",
+      "value": "ဥပမာ - 2 + 3 တွက်ခြင်း Flowchart"
+    },
+    {
+      "type": "list",
+      "value": [
+        "Start",
+        "Number 1 (2) ကို ထည့်",
+        "Number 2 (3) ကို ထည့်",
+        "နှစ်ခုကို ပေါင်း",
+        "ရလဒ်ကို ပြ",
+        "End"
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Flowchart က Programming လေ့လာရာမှာ အရမ်းအရေးကြီးပြီး အထူးသဖြင့် အစပိုင်းမှာ Algorithm ကို ပုံနဲ့နားလည်အောင် ကူညီပေးပါတယ်။"
+    }
   ]
-},
-      // {
-      //   heading: "Flowchart",
-      //   content: [
-      //     { type: "text", value: "Flowchart ဆိုတာ Algorithm ကို ပုစ်ပါ။ အရုပ်လေးများနဲ့ ဖော်ပြပါ။" },
-      //     { type: "heading", value: "Flowchart မှာ အသုံးများတဲ့ ပုစ်ပများ" },
-      //     {
-      //       type: "list", value: [
-      //         "⬜ ထောင့်လိုက်ပါ။ - အစအဆုံး",
-      //         "🔷 မျဉ်းနွယ် - လမ်းကြောင်း",
-      //         "🔶 မြားညွှန် - လုပ်ဆောင်ရမယ့် အလုပ်",
-      //         "🔹 စတုမဟုတ် - ဆုံးဖြတ်ချက်"
-      //       ]
-      //     }
-      //   ]
-      // }
+}
     ]
   },
   "part-4": {
     title: "Part 4: Syntax နဲ့ Semantics",
     sections: [
       {
-  "heading": "Syntax နဲ့ Semantics",
-  "content": [
-    {
-      "type": "text",
-      "value": "Programming Language တွေမှာ Syntax နဲ့ Semantics ဆိုတာ အရမ်းအရေးကြီးတဲ့ အခြေခံ concept နှစ်ခုဖြစ်ပါတယ်။ Code ရေးတဲ့အခါမှာ ဒီနှစ်ခုကို နားလည်ထားမှ program မှန်ကန်စွာ အလုပ်လုပ်နိုင်ပါတယ်။"
-    },
-    {
-      "type": "heading",
-      "value": "Syntax ဆိုတာဘာလဲ?"
-    },
-    {
-      "type": "text",
-      "value": "Syntax ဆိုတာ Programming Language ရဲ့ စည်းမျဉ်း (rules) တွေဖြစ်ပါတယ်။ Code ကို ဘယ်လိုရေးရမလဲ၊ ဘယ်စကားလုံးတွေကို ဘယ်နေရာမှာထားရမလဲ ဆိုတာကို သတ်မှတ်ထားတာပါ။"
-    },
-    {
-      "type": "list",
-      "value": [
-        "ရေးသားပုံ စည်းမျဉ်းများ",
-        "စကားလုံးနေရာချထားမှု",
-        "သင်္ကေတ (symbols) အသုံးပြုပုံ"
-      ]
-    },
-    {
-      "type": "text",
-      "value": "Syntax မှားရင် Computer က နားမလည်နိုင်ပါဘူး။ ဒါကို Syntax Error လို့ခေါ်ပါတယ်။"
-    },
-    {
-      "type": "heading",
-      "value": "Semantics ဆိုတာဘာလဲ?"
-    },
-    {
-      "type": "text",
-      "value": "Semantics ဆိုတာ Code ရဲ့ အဓိပ္ပါယ် (meaning) ဖြစ်ပါတယ်။ Code က မှန်ကန်စွာရေးထားပေမယ့် လုပ်ချင်တဲ့ အလုပ်မှန်ကန်မမှန်ကန်ကို ဆုံးဖြတ်တာပါ။"
-    },
-    {
-      "type": "list",
-      "value": [
-        "Code ရဲ့ အဓိပ္ပါယ်",
-        "Program က ဘာလုပ်မလဲဆိုတာ",
-        "Logic မှန်မမှန် စစ်ဆေးခြင်း"
-      ]
-    },
-    {
-      "type": "text",
-      "value": "Semantics မှားရင် Code က run လုပ်နိုင်ပေမယ့် လိုချင်တဲ့ ရလဒ်မထွက်နိုင်ပါဘူး။"
-    },
-    {
-      "type": "heading",
-      "value": "ဥပမာ"
-    },
-    {
-      "type": "list",
-      "value": [
-        "Syntax မှန်ပေမယ့် Semantics မှား → အလုပ်မမှန်တဲ့ program",
-        "Syntax မှား → program run မလုပ်နိုင်"
-      ]
-    },
-    {
-      "type": "text",
-      "value": "ဒါကြောင့် Programming လေ့လာတဲ့အခါ Syntax ကိုမှန်အောင်ရေးနိုင်သလို Semantics ကိုလည်း နားလည်ထားဖို့ အရေးကြီးပါတယ်။"
-    }
-  ]
-},
+        "heading": "Syntax နဲ့ Semantics",
+        "content": [
+          {
+            "type": "text",
+            "value": "Programming Language တွေမှာ Syntax နဲ့ Semantics ဆိုတာ အရမ်းအရေးကြီးတဲ့ အခြေခံ concept နှစ်ခုဖြစ်ပါတယ်။ Code ရေးတဲ့အခါမှာ ဒီနှစ်ခုကို နားလည်ထားမှ program မှန်ကန်စွာ အလုပ်လုပ်နိုင်ပါတယ်။"
+          },
+          {
+            "type": "heading",
+            "value": "Syntax ဆိုတာဘာလဲ?"
+          },
+          {
+            "type": "text",
+            "value": "Syntax ဆိုတာ Programming Language ရဲ့ စည်းမျဉ်း (rules) တွေဖြစ်ပါတယ်။ Code ကို ဘယ်လိုရေးရမလဲ၊ ဘယ်စကားလုံးတွေကို ဘယ်နေရာမှာထားရမလဲ ဆိုတာကို သတ်မှတ်ထားတာပါ။"
+          },
+          {
+            "type": "list",
+            "value": [
+              "ရေးသားပုံ စည်းမျဉ်းများ",
+              "စကားလုံးနေရာချထားမှု",
+              "သင်္ကေတ (symbols) အသုံးပြုပုံ"
+            ]
+          },
+          {
+            "type": "text",
+            "value": "Syntax မှားရင် Computer က နားမလည်နိုင်ပါဘူး။ ဒါကို Syntax Error လို့ခေါ်ပါတယ်။"
+          },
+          {
+            "type": "heading",
+            "value": "Semantics ဆိုတာဘာလဲ?"
+          },
+          {
+            "type": "text",
+            "value": "Semantics ဆိုတာ Code ရဲ့ အဓိပ္ပါယ် (meaning) ဖြစ်ပါတယ်။ Code က မှန်ကန်စွာရေးထားပေမယ့် လုပ်ချင်တဲ့ အလုပ်မှန်ကန်မမှန်ကန်ကို ဆုံးဖြတ်တာပါ။"
+          },
+          {
+            "type": "list",
+            "value": [
+              "Code ရဲ့ အဓိပ္ပါယ်",
+              "Program က ဘာလုပ်မလဲဆိုတာ",
+              "Logic မှန်မမှန် စစ်ဆေးခြင်း"
+            ]
+          },
+          {
+            "type": "text",
+            "value": "Semantics မှားရင် Code က run လုပ်နိုင်ပေမယ့် လိုချင်တဲ့ ရလဒ်မထွက်နိုင်ပါဘူး။"
+          },
+          {
+            "type": "heading",
+            "value": "ဥပမာ"
+          },
+          {
+            "type": "list",
+            "value": [
+              "Syntax မှန်ပေမယ့် Semantics မှား → အလုပ်မမှန်တဲ့ program",
+              "Syntax မှား → program run မလုပ်နိုင်"
+            ]
+          },
+          {
+            "type": "text",
+            "value": "ဒါကြောင့် Programming လေ့လာတဲ့အခါ Syntax ကိုမှန်အောင်ရေးနိုင်သလို Semantics ကိုလည်း နားလည်ထားဖို့ အရေးကြီးပါတယ်။"
+          }
+        ]
+      },
       {
-  "heading": "Debugging",
-  "content": [
-    {
-      "type": "text",
-      "value": "Debugging ဆိုတာ Program (သို့) Code ထဲမှာရှိတဲ့ အမှားတွေကို ရှာဖွေပြီး ပြင်ဆင်ခြင်းဖြစ်ပါတယ်။ Coding ရေးတဲ့အခါ အမှား (bug) တွေ မဖြစ်အောင်လည်း လုပ်ရသလို ဖြစ်လာရင်လည်း ပြန်ရှာပြီး ပြင်ရပါတယ်။"
-    },
-    {
-      "type": "text",
-      "value": "Bug ဆိုတာက Program မျှော်လင့်ထားသလို မလုပ်တာ၊ ဒါမှမဟုတ် လုံးဝမလုပ်နိုင်တာကို ဆိုလိုပါတယ်။ Debugging ကတော့ အဲ့ဒီ bug တွေကို ဖယ်ရှားတဲ့ process ဖြစ်ပါတယ်။"
-    },
-    {
-      "type": "heading",
-      "value": "Debugging ဘာကြောင့်အရေးကြီးလဲ?"
-    },
-    {
-      "type": "list",
-      "value": [
-        "🧠 Program ကို မှန်ကန်အောင် လုပ်ပေးတယ်",
-        "⚙️ System အလုပ်လုပ်မှုကို တည်ငြိမ်စေတယ်",
-        "💻 App နဲ့ Game တွေ crash မဖြစ်အောင် ကူညီတယ်",
-        "🔍 Code ရဲ့ logic ကို ပိုမိုနားလည်စေတယ်"
-      ]
-    },
-    {
-      "type": "heading",
-      "value": "Debugging လုပ်နည်းများ"
-    },
-    {
-      "type": "list",
-      "value": [
-        "1️⃣ Code ကို တစ်လိုင်းချင်း စစ်ဆေးခြင်း",
-        "2️⃣ Error message တွေကို ဖတ်ရှုခြင်း",
-        "3️⃣ Print/Log ထုတ်ပြီး စစ်ဆေးခြင်း",
-        "4️⃣ အဆင့်လိုက် run ပြီး ကြည့်ခြင်း",
-        "5️⃣ မမှန်တဲ့ logic ကို ပြန်ပြင်ခြင်း"
-      ]
-    },
-    {
-      "type": "heading",
-      "value": "ဥပမာ"
-    },
-    {
-      "type": "list",
-      "value": [
-        "Program က 2 + 2 ကို 5 လို့ပြနေတယ် → Bug ရှိနေတယ်",
-        "Debugging လုပ်ပြီး 2 + 2 = 4 ဖြစ်အောင် ပြင်တယ်"
-      ]
-    },
-    {
-      "type": "text",
-      "value": "Debugging က Programmer တစ်ယောက်အတွက် အရမ်းအရေးကြီးတဲ့ skill တစ်ခုဖြစ်ပြီး Code ရေးနိုင်တာထက် Bug ရှာနိုင်တာက ပိုအရေးကြီးတတ်ပါတယ်။"
-    }
-  ]
-}
+        "heading": "Error ဆိုတာဘာလဲ?",
+        "content": [
+          {
+            "type": "text",
+            "value": "Error ဆိုတာ Program (သို့) Code ရေးတဲ့အခါ မှားယွင်းမှုတစ်ခု ဖြစ်ပေါ်လာတာကို ဆိုလိုပါတယ်။ Error ဖြစ်တဲ့အခါ Computer က မင်းရေးထားတဲ့အတိုင်း အလုပ်မလုပ်နိုင်တော့ပါဘူး။"
+          },
+          {
+            "type": "text",
+            "value": "Coding လောကမှာ Error တွေက အမြဲဖြစ်တတ်ပါတယ်။ ဒါကြောင့် Programmer တွေက Error ကို နားလည်ပြီး ပြင်နိုင်ဖို့ လိုအပ်ပါတယ်။"
+          },
+          {
+            "type": "heading",
+            "value": "Error အမျိုးအစားများ"
+          },
+          {
+            "type": "list",
+            "value": [
+              "🧩 Syntax Error - စည်းမျဉ်း (rules) မလိုက်နာလို့ ဖြစ်တဲ့ error",
+              "⚙️ Runtime Error - Program run လုပ်နေချိန်မှာ ဖြစ်တဲ့ error",
+              "🧠 Logic Error - Code က run လုပ်ပေမယ့် ရလဒ်မှားနေတဲ့ error"
+            ]
+          },
+          {
+            "type": "heading",
+            "value": "ဥပမာများ"
+          },
+          {
+            "type": "list",
+            "value": [
+              "Syntax Error → bracket ( ) မပိတ်ထားခြင်း",
+              "Runtime Error → 0 နဲ့ ခွဲခြင်း (divide by zero)",
+              "Logic Error → 2 + 2 ကို 5 လို့တွက်နေခြင်း"
+            ]
+          },
+          {
+            "type": "text",
+            "value": "Error တွေကို ကြောက်စရာမလိုပါဘူး။ Programming လေ့လာတဲ့အခါ Error တွေက သင်ခန်းစာတစ်ခုလို ဖြစ်ပြီး ပိုကောင်းတဲ့ Programmer ဖြစ်လာအောင် ကူညီပေးပါတယ်။"
+          }
+        ]
+      },
+      {
+        "heading": "Debugging",
+        "content": [
+          {
+            "type": "text",
+            "value": "Debugging ဆိုတာ Program (သို့) Code ထဲမှာရှိတဲ့ အမှားတွေကို ရှာဖွေပြီး ပြင်ဆင်ခြင်းဖြစ်ပါတယ်။ Coding ရေးတဲ့အခါ အမှား (bug) တွေ မဖြစ်အောင်လည်း လုပ်ရသလို ဖြစ်လာရင်လည်း ပြန်ရှာပြီး ပြင်ရပါတယ်။"
+          },
+          {
+            "type": "text",
+            "value": "Bug ဆိုတာက Program မျှော်လင့်ထားသလို မလုပ်တာ၊ ဒါမှမဟုတ် လုံးဝမလုပ်နိုင်တာကို ဆိုလိုပါတယ်။ Debugging ကတော့ အဲ့ဒီ bug တွေကို ဖယ်ရှားတဲ့ process ဖြစ်ပါတယ်။"
+          },
+          {
+            "type": "heading",
+            "value": "Debugging ဘာကြောင့်အရေးကြီးလဲ?"
+          },
+          {
+            "type": "list",
+            "value": [
+              "🧠 Program ကို မှန်ကန်အောင် လုပ်ပေးတယ်",
+              "⚙️ System အလုပ်လုပ်မှုကို တည်ငြိမ်စေတယ်",
+              "💻 App နဲ့ Game တွေ crash မဖြစ်အောင် ကူညီတယ်",
+              "🔍 Code ရဲ့ logic ကို ပိုမိုနားလည်စေတယ်"
+            ]
+          },
+          {
+            "type": "heading",
+            "value": "Debugging လုပ်နည်းများ"
+          },
+          {
+            "type": "list",
+            "value": [
+              "1️⃣ Code ကို တစ်လိုင်းချင်း စစ်ဆေးခြင်း",
+              "2️⃣ Error message တွေကို ဖတ်ရှုခြင်း",
+              "3️⃣ Print/Log ထုတ်ပြီး စစ်ဆေးခြင်း",
+              "4️⃣ အဆင့်လိုက် run ပြီး ကြည့်ခြင်း",
+              "5️⃣ မမှန်တဲ့ logic ကို ပြန်ပြင်ခြင်း"
+            ]
+          },
+          {
+            "type": "heading",
+            "value": "ဥပမာ"
+          },
+          {
+            "type": "list",
+            "value": [
+              "Program က 2 + 2 ကို 5 လို့ပြနေတယ် → Bug ရှိနေတယ်",
+              "Debugging လုပ်ပြီး 2 + 2 = 4 ဖြစ်အောင် ပြင်တယ်"
+            ]
+          },
+          {
+            "type": "text",
+            "value": "Debugging က Programmer တစ်ယောက်အတွက် အရမ်းအရေးကြီးတဲ့ skill တစ်ခုဖြစ်ပြီး Code ရေးနိုင်တာထက် Bug ရှာနိုင်တာက ပိုအရေးကြီးတတ်ပါတယ်။"
+          }
+        ]
+      }
     ]
   }
 };
@@ -342,6 +425,22 @@ function ContentRenderer({ content }) {
                 </li>
               ))}
             </ul>
+          );
+        }
+        if (item.type === "image") {
+          return (
+            <figure key={idx} className="my-6">
+              <img 
+                src={item.src} 
+                alt={item.alt || ""} 
+                className="rounded-xl w-full max-w-2xl mx-auto shadow-lg"
+              />
+              {item.caption && (
+                <figcaption className="text-center text-slate-400 text-sm mt-2">
+                  {item.caption}
+                </figcaption>
+              )}
+            </figure>
           );
         }
         return (
