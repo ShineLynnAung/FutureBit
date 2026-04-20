@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Header from "../components/Header";
-import { FaCheck } from "react-icons/fa";
 
 const parts = [
   {
@@ -104,49 +103,29 @@ const contents = {
     title: "Part 2: Programming Language",
     sections: [
       {
-        heading: "Programming Language ဆိုတာဘာလဲ?",
-        content: [
-          { type: "text", value: "Programming Language ဆိုတာ ကျွန်တော်တို့နဲ့ Computer ကို ဆက်သွယ်ပေးတဲ့ ဘာသာစကားဖြစ်ပါတယ်။" },
-          { type: "text", value: "Computer ဟာ နိုင်ငံဤည်းနဲ့ မစဉ်းစားတတ်ပါ။ ဒါကြောင့် Programming Language သုံးပြီး ပါးပါးပါ ပါတယ်။" },
-          { type: "heading", value: "Programming Language များရှိပါ။" },
+        "heading": "Programming Language ဆိုတာဘာလဲ?",
+        "content": [
+          { "type": "text", "value": "Programming Language ဆိုတာ Computer နဲ့ ဆက်သွယ်ဖို့ အသုံးပြုတဲ့ အထူးဘာသာစကားတစ်ခုဖြစ်ပါတယ်။ လူတွေက Computer ကို နားလည်အောင် ဒီ language တွေကို အသုံးပြုပြီး အမိန့်ပေးကြပါတယ်။" },
+          { "type": "text", "value": "Computer က တကယ်တော့ 0 နဲ့ 1 (binary) ပဲ နားလည်ပါတယ်။ Programming Language တွေကတော့ လူတွေ အလွယ်တကူ ရေးနိုင်အောင် လုပ်ထားတဲ့ language ဖြစ်ပါတယ်။" },
+          { "type": "heading", "value": "Programming Language ရဲ့ အရေးပါမှု" },
           {
-            type: "list", value: [
-              "Python - လွယ်ကူပါ။ AI နဲ့ Data Science မှာ အသုံးများပါ။",
-              "JavaScript - Website မှာ အသုံးများပါ။",
-              "Java - App များရေးလုပ်ပါ။",
-              "C++ - ဂိမ်းနဲ့ ပါးစိတ်ပါ။",
-              "Scratch - အိမ်မက်ပါးသားများအတွက် လွယ်ကူပါ။"
+            "type": "list", "value": [
+              "💻 Computer ကို အမိန့်ပေးနိုင်ရန်",
+              "📱 App တွေ ဖန်တီးနိုင်ရန်",
+              "🌐 Website တွေ တည်ဆောက်နိုင်ရန်",
+              "🎮 Game တွေ ဖန်တီးနိုင်ရန်"
             ]
-          }
-        ]
-      },
-      {
-        heading: "ဘာဘာသားကို စတင်လုပ်ပါး",
-        content: [
-          { type: "text", value: "မိမိရဲ့ ပါးယွဥ်နဲ့ လိုက်လျောညီထွေဖြစ်တဲ့ Language ကို ရွေးချယ်ပါ။" },
-          { type: "heading", value: "အကြံပါ။" },
+          },
+          { "type": "heading", "value": "ဥပမာ Programming Language များ" },
           {
-            type: "list", value: [
-              "👶 အစအဖြစ် - Scratch ကနေ စတင်ပါ။",
-              "🌐 Website လုပ်ချင်ရင် - HTML, CSS, JavaScript လေ့လာပါ။",
-              "🤖 AI လုပ်ချင်ရင် - Python လေ့လာပါ။"
+            "type": "list", "value": [
+              "JavaScript - Website တွေမှာ အသုံးများတယ်",
+              "Python - စတင်လေ့လာဖို့ လွယ်ကူတယ်",
+              "Java - Mobile App တွေမှာ အသုံးများတယ်",
+              "C++ - Game နဲ့ system programming တွေမှာ အသုံးများတယ်"
             ]
-          }
-        ]
-      },
-      {
-        heading: "Language များ",
-        content: [
-          { type: "heading", value: "Programming Language များစွာ ရှိပါ။" },
-          {
-            type: "list", value: [
-              "Python - လွယ်ကူ၊ ပါးပါးပါ၊ AI မှာ အသုံးများပါ။",
-              "JavaScript - Website မှာ မရှိမဖြစ်လိုအပ်ပါ။",
-              "Java - Android App မှာ အသုံးများပါ။",
-              "C++ - မြန်ပါ၊ Game မှာ အသုံးများပါ။",
-              "Scratch - အိမ်မက်ပါးသားများအတွက် အလွယ်တကူ လေ့လာပါ။"
-            ]
-          }
+          },
+          { "type": "text", "value": "Programming Language မရှိရင် Computer ကို ဘာလုပ်ရမလဲဆိုတာ ပြောလို့မရပါဘူး။ ဒါကြောင့် Coding လုပ်ရာမှာ Programming Language က အရေးကြီးတဲ့ အရာတစ်ခုဖြစ်ပါတယ်။" }
         ]
       }
     ]
@@ -295,8 +274,8 @@ export default function ProgrammingFundamentals() {
                 <button
                   onClick={() => setActivePart(part.id)}
                   className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activePart === part.id
-                      ? "bg-blue-600 font-bold"
-                      : "hover:bg-white/5 text-slate-400"
+                    ? "bg-blue-600 font-bold"
+                    : "hover:bg-white/5 text-slate-400"
                     }`}
                 >
                   {part.title}
