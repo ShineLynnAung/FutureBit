@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/FutureBit/static/css/main.246c5b80.css",
-    "main.js": "/FutureBit/static/js/main.4f04ea45.js",
+    "main.js": "/FutureBit/static/js/main.4ea536ea.js",
     "static/js/453.01af49ba.chunk.js": "/FutureBit/static/js/453.01af49ba.chunk.js",
     "static/media/logo.jpg": "/FutureBit/static/media/logo.6fbea21f7ff07acc9a2e.jpg",
     "index.html": "/FutureBit/index.html",
     "main.246c5b80.css.map": "/FutureBit/static/css/main.246c5b80.css.map",
-    "main.4f04ea45.js.map": "/FutureBit/static/js/main.4f04ea45.js.map",
+    "main.4ea536ea.js.map": "/FutureBit/static/js/main.4ea536ea.js.map",
     "453.01af49ba.chunk.js.map": "/FutureBit/static/js/453.01af49ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.246c5b80.css",
-    "static/js/main.4f04ea45.js"
+    "static/js/main.4ea536ea.js"
   ]
 }
